@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "dynsyspy"
+version = "0.1.0"
+description = ""
+authors = ["DanPin7679 <dany.pineault@videotron.ca>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.1.1"
+pydantic = "^2.6.4"
+sympy = "^1.12"
+pandas = "^2.2.1"
+plotly = "^5.20.0"
+
+[tool.poetry.scripts]
+main = "dynsyspy.main:start"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
