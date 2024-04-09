@@ -100,8 +100,7 @@ class Stock(Item):
     def print(self) -> str:
         for i in self.latex_eq():
             display(Math(i))
-
-            
+        
 class Module(Item):
     stocks: List[Stock]
     params: Optional[List[Param]] = []
