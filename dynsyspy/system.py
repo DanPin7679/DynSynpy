@@ -12,76 +12,59 @@ def pass_globals(module_globals):
 class Item(BaseModel):
     name: str;
     description: str = "";
-    symbol: Any = None
-    isFunction:bool = False
 
     def model_post_init(self, __context: Any) -> None: 
-        self.symbol = sp.var(self.name)
-        main_global[self.name] = self.symbol
+        main_global[self.name] = sp.var(self.name)
 
-class Param(Item):
-    name: str;
-    description: str = "";
-    symbol: Any = None
-    isFunction:bool = False
-
-    def model_post_init(self, __context: Any) -> None: 
-        """if self.isFunction:
-            print(self.name)
-            self.symbol = sp.var(self.name, cls=sp.Function)
-            main_global[self.name] = self.symbol
-        else:"""
-        self.symbol = sp.var(self.name)
-        main_global[self.name] = self.symbol
-
+    @computed_field
+    @property
+    def var_sym(self)->Any:
+        return sp.Symbol(self.name)
+    
+    @computed_field
+    @property
+    def fn_sym(self)->Any:
+        return sp.Function(self.name)
+    
+    @computed_field
+    @property
+    def fn_sym_of_t(self)->Any:
+        return self.fn_sym(t)
+    
     def latex(self) -> str:
-        return sp.latex(self.symbol)
+        return sp.latex(self.var_sym)
 
     def print(self) -> str:
         for i in self.latex():
             display(Math(i))
+
+class Param(Item):
+    _: Any = None
 
 class Flow(Item):
     eq: Any
 
-    @computed_field
-    @property
-    def eq_symbol(self)->Any:
-        return self.eq
+    def latex_eq(self) -> str:
+        return sp.latex(self.eq)
 
-    def latex(self) -> str:
-        return sp.latex(self.eq_symbol)
-
-    def print(self) -> str:
+    def print_eq(self) -> str:
         for i in self.latex():
             display(Math(i))
 
 class Intermediary(Item):
-    eq: Any
+    eq_rhs: Any
 
     @computed_field
     @property
-    def eq_rhs_symbol(self) -> Any:
-        return self.eq
-        #return parse_expr(self.eq)
-
-    @computed_field
-    @property
-    def _fn_symbol(self)-> Any:
-        return sp.Function(self.name)(t)
-
-    @computed_field
-    @property
-    def eq_symbol(self) -> Any:
-        eq = sp.Eq(self._fn_symbol, self.eq_rhs_symbol)
+    def eq(self) -> Any:
+        eq = sp.Eq(self.fn_sym_of_t, self.eq_rhs)
         return eq
     
     def latex(self) -> str:
-        return sp.latex(self.eq_symbol)
+        return sp.latex(self.eq)
 
     def print(self) -> str:
-        for i in self.latex():
-            display(Math(i))
+        display(Math(self.latex))
 
 class Stock(Item):
     flow_in: Optional[Flow] = None;
@@ -94,40 +77,28 @@ class Stock(Item):
             if self.flow_out == None:
                 raise Exception("Sorry, a stock need at least 1 flow") 
             else:
-                return self.flow_out.eq_symbol
+                return self.flow_out.eq
         else:
             if self.flow_out == None:
-                return self.flow_in.eq_symbol
+                return self.flow_in.eq
             else:
-                return self.flow_in.eq_symbol - self.flow_out.eq_symbol
-
-    @computed_field
-    @property
-    def _stock_symbol(self)-> Any:
-        return sp.Function(self.name)(t)
+                return self.flow_in.eq - self.flow_out.eq
     
     @computed_field
     @property
     def eq(self) -> Any:
-        eq = sp.Eq(self._stock_symbol.diff(t), self.flow_net)
+        eq = sp.Eq(self.fn_sym_of_t.diff(t), self.flow_net)
         return eq
     
-    def latex(self) -> str:
+    def latex_eq(self) -> str:
         res = [
             sp.latex(self.eq)
         ]
-
-        """
-        f"{sp.latex('where')}"
-        if self.flow_in != None:
-            res.append( self.flow_in.latex(),)
-        if self.flow_out != None:
-                res.append( self.flow_out.latex(),)"""
         res.append("")
         return res
         
     def print(self) -> str:
-        for i in self.latex():
+        for i in self.latex_eq():
             display(Math(i))
 
             
@@ -143,7 +114,7 @@ class Module(Item):
     def latex(self) -> str:
         latex_list = [f"{sp.latex(self.name)}"]
         for s in self.stocks:
-            latex_list=latex_list+s.latex()
+            latex_list=latex_list+s.latex_eq()
 
         latex_list.append(f"where")
         for p in self.params:
@@ -162,10 +133,30 @@ class System(Item):
     def model_post_init(self, __context) -> None:
         for m in self.modules:
             self.__dict__[m.name] = m
+
+    @computed_field
+    @property
+    def _all_items(self)->Any:
+        all_items = {
+            "param": [],
+            "stock": [],
+            "flow": [],
+            "inter": []
+        }
+        for m in self.modules:
+            for p in m.params:
+                all_items["param"].append(p)
+            for s in m.stocks:
+                all_items["stock"].append(s)
+                if s.flow_in!=None: all_items["flow"].append(s.flow_in)
+                if s.flow_out!=None: all_items["flow"].append(s.flow_out) 
+            for inter in m.inters:
+                all_items["inter"].append(inter)
+        return all_items
     
     @computed_field
     @property
-    def eqs(self) -> Any:
+    def eqs_stock(self) -> Any:
         eqs = []
         for m in self.modules:
             for s in m.stocks:
@@ -178,7 +169,7 @@ class System(Item):
         eqs = []
         for m in self.modules:
             for inter in m.inters:
-                eqs.append(inter.eq_symbol)
+                eqs.append(inter.eq)
         return eqs
     
     def latex(self) -> str:
