@@ -18,3 +18,7 @@
 - each Solver
 
 ## Bugs
+
+## Git
+
+- git checkout -b <branchname>
