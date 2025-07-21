@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1OLanDTx-KlxCKVqGuYKo8N1J28oV2c19">
+	<name>Dorchester</name>
+	<gx:CascadingStyle kml:id="__managed_style_2736B550BD3963825524">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_19A1F4558E3963825524">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_031630DA923963825524">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_19A1F4558E3963825524</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2736B550BD3963825524</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_567F81DF7239638225D7">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<gx:displayMode>card</gx:displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_4FD92146E339638225D7">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<gx:displayMode>card</gx:displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_3CD5534FFD39638225D7">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_4FD92146E339638225D7</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_567F81DF7239638225D7</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="074907DC8B3957CAEDFC">
+		<name>Club de Golf Dorchester</name>
+		<gx:mid>/g/1tf1nfp8</gx:mid>
+		<gx:fid>0x4cb90035b2a9d803:0xc248b2bd44adae6c</gx:fid>
+		<LookAt>
+			<longitude>-70.8358786</longitude>
+			<latitude>46.48570309999999</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>700.3037891638804</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_3CD5534FFD39638225D7</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-70.8358786,46.48570309999999,0</coordinates>
+		</Point>
+	</Placemark>
+	<Folder id="026B4D342C3963825521">
+		<name>hole-1</name>
+		<styleUrl>#__managed_style_031630DA923963825524</styleUrl>
+		<Placemark id="06B56277EF396382CE54">
+			<name>tee-blue</name>
+			<LookAt>
+				<longitude>-70.83656726796366</longitude>
+				<latitude>46.4855296537487</latitude>
+				<altitude>382.8435343109221</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>30.00000204760457</gx:fovy>
+				<range>199.6342722647387</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_031630DA923963825524</styleUrl>
+			<Point>
+				<coordinates>-70.83667275527496,46.48537462797429,382.8713535032394</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="0EE6554C7C3963833FAC">
+			<name>green</name>
+			<LookAt>
+				<longitude>-70.83787640157264</longitude>
+				<latitude>46.48676608210101</latitude>
+				<altitude>384.7722163440037</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>30.00000204760457</gx:fovy>
+				<range>940.8356821970667</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_031630DA923963825524</styleUrl>
+			<Point>
+				<coordinates>-70.83949321243341,46.48766207373379,387.1053691031555</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="003C23D45F396383CFB0">
+			<name>hole-line</name>
+			<LookAt>
+				<longitude>-70.83746678894104</longitude>
+				<latitude>46.48634496538584</latitude>
+				<altitude>384.8885134486314</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>30.00000204760457</gx:fovy>
+				<range>940.7193306482804</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_031630DA923963825524</styleUrl>
+			<LineString>
+				<coordinates>
+					-70.83688816905202,46.48556581740226,0 -70.83804053245082,46.48667514618308,0 -70.83947560462579,46.48765454673808,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Folder id="086A9FB0923963845C28">
+			<name>hole-2</name>
+			<open>1</open>
+			<styleUrl>#__managed_style_031630DA923963825524</styleUrl>
+			<Placemark id="08265AAF803963848D9F">
+				<name>tee-blue</name>
+				<LookAt>
+					<longitude>-70.84044142816765</longitude>
+					<latitude>46.48828563192179</latitude>
+					<altitude>387.4737708629655</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>30.00000204760457</gx:fovy>
+					<range>938.134101215692</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_031630DA923963825524</styleUrl>
+				<Point>
+					<coordinates>-70.83973953935738,46.48789096272607,387.5361685904298</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="0BA7DEF6DD396384CCD3">
+				<name>green</name>
+				<LookAt>
+					<longitude>-70.84040561966454</longitude>
+					<latitude>46.48913391291398</latitude>
+					<altitude>386.0907763471022</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>30.00000204760457</gx:fovy>
+					<range>939.5169695038931</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_031630DA923963825524</styleUrl>
+				<Point>
+					<coordinates>-70.84024421960673,46.49005718268004,385.0904002260327</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="022C0841823963856C6C">
+				<name>hole-line</name>
+				<LookAt>
+					<longitude>-70.84040561966454</longitude>
+					<latitude>46.48913391291398</latitude>
+					<altitude>386.0907763471022</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>30.00000204760457</gx:fovy>
+					<range>939.5169695038931</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_031630DA923963825524</styleUrl>
+				<LineString>
+					<coordinates>
+						-70.84053583825677,46.48862978232746,0 -70.84129603367653,46.4894495489993,0 -70.84040652728537,46.48999446341199,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>
